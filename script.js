@@ -51,9 +51,33 @@ function bubbleSort(array){
     return moves;
 }
 
-function play(){
+function selectionSort(array) {
+    const moves = [];
+    for (let i = 0; i < array.length; i++) {
+        let smallest = i;
+        for (let j = i + 1; j < array.length; j++) {
+            moves.push({ indices: [smallest, j], type: "comp" });
+            if (array[j] < array[smallest]) {
+                smallest = j;
+            }
+        }
+        if (i !== smallest) {
+            [array[i], array[smallest]] = [array[smallest], array[i]];
+            moves.push({ indices: [i, smallest], type: "swap" });
+        }
+    }
+    return moves;
+}
+
+
+function play(algorithm){
     const copy = [...array];
-    const moves= bubbleSort(copy);
+    let moves;
+    if (algorithm === 'bubble'){
+        moves = bubbleSort(copy);
+    } else if (algorithm === 'selection'){
+        moves = selectionSort(copy)
+    }
     animate(moves);
 }
 
