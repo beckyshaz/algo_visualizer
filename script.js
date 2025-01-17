@@ -69,6 +69,22 @@ function selectionSort(array) {
     return moves;
 }
 
+function insertionSort(array){
+    const moves = [];
+    for (let i = 1; i < array.length; i++){
+        let key = array[i];
+        let j = i - 1;
+
+        while (j >= 0 && array[j] > key){
+            moves.push({ indices: [j, j + 1], type: "comp" });
+            array[j + 1] = array[j];
+            j--;
+        }
+        moves.push({ indices: [j, key], type: "swap" });
+        array[j + 1] = key;
+    }
+    return moves;
+}
 
 function play(algorithm){
     const copy = [...array];
@@ -76,7 +92,9 @@ function play(algorithm){
     if (algorithm === 'bubble'){
         moves = bubbleSort(copy);
     } else if (algorithm === 'selection'){
-        moves = selectionSort(copy)
+        moves = selectionSort(copy);
+    } else if (algorithm === 'insertion'){
+        moves = insertionSort(copy);
     }
     animate(moves);
 }
