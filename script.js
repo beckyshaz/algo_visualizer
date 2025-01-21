@@ -21,7 +21,7 @@ function playMusic(freq){
     const duration = 0.1;
     const osc = ctx.createOscillator();
     const node = ctx.createGain();
-    node.gain.value = 0.1;
+    node.gain.value = 0.5;
     node.gain.linearRampToValueAtTime(
         0, ctx.currentTime + duration
     );
@@ -243,6 +243,16 @@ function mergeSort(array, moves = [], startIndex = 0) {
     return merge(left, right, moves, startIndex);
 }
 */
+const speedControl = document.getElementById("speedControl");
+const speedValue = document.getElementById("speedValue");
+
+let delay = speedControl.value
+
+speedControl.addEventListener("input", function () {
+    delay = speedControl.value;
+    speedValue.textContent = `${delay}ms`;
+  });
+
 function animate(moves){
     if (moves.length === 0){
         showBars();
@@ -257,12 +267,12 @@ function animate(moves){
    /*else if (move.type === "merge") {
      array[i] = move.value; // Update the array with the merged value
     }*/
-    playMusic(200 + array[i] * 500);
+    playMusic(200 + array[i] * 700);
     playMusic(200 + array[j] * 500);
     showBars(move);
     setTimeout(function(){
         animate(moves);
-    },700);
+    }, delay);
 }
 
 function showBars(move){
@@ -278,11 +288,11 @@ function showBars(move){
                 bars.style.backgroundColor = "green"; // Green for swap
             } else if (move.type === "comp") {
                 bars.style.backgroundColor = "yellow"; // Yellow for comparison
-            } else if (move.type === "shift") {
+            } /*else if (move.type === "shift") {
                 bars.style.backgroundColor = "red"; // Red for shift
             } else if (move.type === "insert") {
                 bars.style.backgroundColor = "blue"; // Blue for insert
-            }
+            }*/
         }
         container.appendChild(bars);
     }

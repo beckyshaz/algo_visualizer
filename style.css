@@ -1,9 +1,17 @@
 body{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    background-color: palevioletred;
+}
+
+h1{
+    font-weight: bolder;
+    font-size: 50px;
+    color: blue;
 }
 
 #container{
@@ -16,4 +24,200 @@ body{
     width: 10px;
     background-color: black;
     margin: 1px;
+}
+
+.slidercontainer{
+    position: absolute;
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    top: 50px;
+    left: 50px;
+}
+
+#speedValue{
+    background-color: black;
+    color: chartreuse;
+    border: 2px solid purple;
+    border-radius: 10px;
+    
+}
+
+.controlspeed{
+    background-color: black;
+    color: chartreuse;
+    border: 2px solid purple;
+    border-radius: 10px;
+}
+
+.slider{
+    background-color: black;
+}
+
+
+/**.buttons{
+    background-color: chartreuse;
+    color: black;
+}
+    **/
+
+
+#start{
+    color: chartreuse;
+    background-color: black;
+    border-radius: 10px;
+    transition: 1s;
+    font-size: 16px;
+    padding: 14px, 40px;
+    border: 2px solid purple;
+}
+
+#bubble{
+    color: chartreuse;
+    background-color: black; 
+    border-radius: 10px;
+    transition: 1s;
+    font-size: 16px;
+    padding: 14px, 40px;
+    border: 2px solid purple;  
+}
+
+#selection{
+    color: chartreuse;
+    background-color: black;
+    border-radius: 10px;
+    transition: 1s;
+    font-size: 16px;
+    padding: 14px, 40px;
+    border: 2px solid purple;   
+}
+
+#insertion{
+    color: chartreuse;
+    background-color: black; 
+    border-radius: 10px;
+    transition: 1s;
+    font-size: 16px;
+    padding: 14px, 40px;
+    border: 2px solid purple;  
+}
+
+#merge{
+    color: chartreuse;
+    background-color: black; 
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 14px, 40px;
+    border: 2px solid purple;
+     
+}
+
+#start:hover{
+    color: yellow;
+    transition: 1s;
+    
+}
+
+#start:focus{
+    background-color: yellow;
+    color: blue;
+    font-weight: bold;
+    transition: none;
+}
+
+#start:active{
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    transition: none;
+    transform: translateY(4px);
+    box-shadow:  0 5px  black;
+}
+
+#bubble:hover{
+    color: yellow;
+    transition: 1s;
+    
+}
+
+#bubble:focus{
+    background-color: yellow;
+    color: blue;
+    font-weight: bold;
+    transition: none;
+}
+
+#bubble:active{
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    transition: none;
+    transform: translateY(4px);
+    box-shadow:  0 5px  black;
+}
+
+#selection:hover{
+    color: yellow;
+    transition: 1s;
+    
+}
+
+#selection:focus{
+    background-color: yellow;
+    color: blue;
+    font-weight: bold;
+    transition: none;
+}
+
+#selection:active{
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    transition: none;
+    transform: translateY(4px);
+    box-shadow:  0 5px  black;
+}
+
+#insertion:hover{
+    color: yellow;
+    transition: 1s;
+    
+}
+
+#insertion:focus{
+    background-color: yellow;
+    color: blue;
+    font-weight: bold;
+    transition: none;
+}
+
+#insertion:active{
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    transition: none;
+    transform: translateY(4px);
+    box-shadow:  0 5px  black;
+}
+
+#merge:hover{
+    color: yellow;
+    transition: 1s;
+    
+}
+
+#merge:focus{
+    background-color: yellow;
+    color: blue;
+    font-weight: bold;
+    transition: none;
+}
+
+#merge:active{
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    transition: none;
+    transform: translateY(4px);
+    box-shadow:  0 5px  black;
 }

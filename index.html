@@ -7,16 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sorting Visualizer</h1>
+    <h1>&#127926Sorting Algorithm Visualizer&#127926</h1>
     <div id="container"></div>
 
     <hr>
-    <div>
-        <button onclick="start()">Start</button>
-        <button onclick="play('bubble')">Bubble Sort</button>
-        <button onclick="play('selection')">Selection Sort</button>
-        <button onclick="play('insertion')">Insertion Sort</button>
-        <button onclick="play('merge')">Merge Sort</button>
+    <div class="buttons">
+        <button onclick="start()" id="start">Start</button>
+        <button onclick="play('bubble')" id="bubble">Bubble Sort</button>
+        <button onclick="play('selection')" id="selection">Selection Sort</button>
+        <button onclick="play('insertion')" id="insertion">Insertion Sort</button>
+        <button onclick="play('merge')" id="merge">Merge Sort</button>
+    </div>
+
+    <div class="slidercontainer">
+        <div class="controlspeed">
+            <label for="speedControl">Control Speed</label>
+        </div>
+        <input type="range" min="1" max="1000" value="500" class="slider" id="speedControl">
+        <span id="speedValue">500ms</span>
     </div>
 
     <script src="script.js"></script>
