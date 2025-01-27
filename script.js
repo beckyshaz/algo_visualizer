@@ -21,7 +21,7 @@ function playMusic(freq){
     const duration = 0.1;
     const osc = ctx.createOscillator();
     const node = ctx.createGain();
-    node.gain.value = 0.5;
+    node.gain.value = 0.1;
     node.gain.linearRampToValueAtTime(
         0, ctx.currentTime + duration
     );
